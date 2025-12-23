@@ -1,0 +1,1 @@
+ˇ# az előhő házifeladatokból késziteni osztályokat vagy hierarchikus osztályokkal kibőviteni vagy megcsinálni a osztályokba sorolását

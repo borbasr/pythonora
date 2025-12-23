@@ -1,0 +1,10 @@
+<data>
+    <items>
+        <item name="item1">Adat 1</item>
+        <item name="item2">Adat 2</item>
+    </items>
+    <cars>
+        <car brand="Audi" color="black">New</car>
+        <car brand="BMW" color="red">Used</car>
+    </cars>
+</data>

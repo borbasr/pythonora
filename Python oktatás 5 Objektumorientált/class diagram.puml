@@ -1,0 +1,49 @@
+@startuml
+
+class MenuItem {
+    - name: str
+    - price: int
+    --
+    + __str__(): str
+    + to_dict(): dict
+}
+
+class Order {
+    - customer_name: str
+    - table_number: int
+    - items: List<MenuItem>
+    - timestamp: str
+    --
+    + __str__(): str
+    + to_dict(): dict
+    + total_price(): int
+}
+
+class User {
+    - name: str
+    + login(): bool
+}
+
+class Admin {
+    + manage_menu(): void
+    + generate_statistics(): void
+    + manage_orders(): void
+}
+
+class Waiter {
+    + tahe_order(): void
+    + list_orders(): void
+}
+
+class Guest {
+    + provide_feedback(): void
+}
+User <|-- Admin
+User <|-- Waiter
+User <|-- Guest
+
+
+
+
+
+@enduml

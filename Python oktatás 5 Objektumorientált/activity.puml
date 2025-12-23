@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:admin logs in;
+if (Admin rights?) then (true)
+  :Manage menu;
+  :Edit, add, delete items;
+  :Manage menu;
+  :save menu;
+else (false)
+  :Error: Acces denied;
+endif
+stop
+
+@enduml
+#az enterprice architect oldalal keresgelni, milyen tipusu grafok vannak

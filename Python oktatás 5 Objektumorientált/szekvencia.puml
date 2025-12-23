@@ -1,0 +1,16 @@
+#bemutatja a rendszerben vegrehajtott muveletek időbeni sorrendjét
+@startuml
+actor Waiter
+actor Chef
+participant System
+
+Waiter -> System: Start new order
+System -> Waiter: Display menu
+Waiter -> System: Select item
+System -> Waiter: Comfirm selection
+Waiter -> System: Save order
+System -> Waiter: Order succes
+System -> Chef: Notifie the Chef
+
+== Repetition ==
+@enduml

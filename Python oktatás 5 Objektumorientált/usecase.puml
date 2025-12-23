@@ -1,0 +1,16 @@
+@startuml
+actor Admin
+actor Pincér
+actor Vendég
+
+Admin --->(Menüt szerkeszti)
+Admin --->(Statisztkia generálása)
+Admin --->(Rendelések szerkesztése)
+Pincér --->(Új rendelés felvitelet)
+Pincér --->(Rendelés listázása)
+Vendég --->(Visszajelzést ad)
+
+class Menuitem{
+-name
+
+@enduml
