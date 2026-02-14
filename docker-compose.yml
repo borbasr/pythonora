@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:15
+    container_name: local_pgdb
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user-name
+      POSTGRES_PASSWORD: strong-password
+      POSTGRES_DB: my_database
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user-name -d my_database"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  pgadmin:
+    image: dpage/pgadmin4:8.1
+    container_name: pgadmin_container
+    restart: unless-stopped
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user-name@test.com
+      PGADMIN_DEFAULT_PASSWORD: strong-password
+      PGADMIN_LISTEN_PORT: 80
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  local_pgdata:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./db_data
+  pgadmin-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./pgadmin_data
