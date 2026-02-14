@@ -1,0 +1,5 @@
+{
+  "source_dir": "source_data",
+  "target_dir": "backup_data",
+  "include_ext": [".txt",]
+}
